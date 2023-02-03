@@ -1,4 +1,6 @@
 import { defineConfig } from "vite";
+import legacy from '@vitejs/plugin-legacy';
+import viteImagemin from 'vite-plugin-imagemin';
 
 export default defineConfig({
     server: {
@@ -25,6 +27,12 @@ export default defineConfig({
                 return '[name][extname]';
                 },
             },
-        }
+        },
+        plugins: [
+            legacy({
+                targets: ['ie >= 11'],
+                additionalLegacyPolyfills: ['regenerator-runtime/runtime']
+            })
+        ],
     },
 });

@@ -1,2 +1,12 @@
-# vite
-Learning Development Environment
+# Vite Static Sample
+
+## Project開始
+- 本リポジトリをクローン
+
+## npmコマンド
+| コマンド | 用途 |
+| npm i | プロジェクトに必要なバッケージのインストールをします。 |
+| npm run dev | ローカルサーバーが立ち上がります |
+
+## ディレクトリ構成
+- src配下が、dist配下にコンパイルされる

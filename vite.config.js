@@ -1,7 +1,5 @@
 import { defineConfig } from "vite";
-import legacy from '@vitejs/plugin-legacy';
-import viteImagemin from 'vite-plugin-imagemin';
-
+import legacy from '@vitejs/plugin-legacy'; 
 export default defineConfig({
     server: {
         host: true,
@@ -9,18 +7,18 @@ export default defineConfig({
     base: './',
     root: 'src/sample/lp/',
     build: {
-        outDir: '../../../dist/sample/lp/',
+        outDir: '../../../sample/lp/',
         rollupOptions: {
             output: {
                 chunkFileNames: 'js/[name].js',
-                entryFileNames: 'js/main.js',
+                entryFileNames: 'assets/js/main.js',
             assetFileNames: ({name}) => {
                 if (/\.(gif|jpe?g|png|svg)$/.test(name ?? '')){
-                    return 'images/[name][extname]';
+                    return 'assets/images/[name][extname]';
                 }
                 
                 if (/\.css$/.test(name ?? '')) {
-                    return 'css/style[extname]';   
+                    return 'assets/css/style[extname]';   
                 }
                 // default value
                 // ref: https://rollupjs.org/guide/en/#outputassetfilenames
